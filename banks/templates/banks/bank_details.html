@@ -1,0 +1,8 @@
+<h2>{{ bank.name }}</h2>
+<p>{{ bank.description }}</p>
+<h3>Branches</h3>
+<ul>
+    {% for branch in branches %}
+    <li>{{ branch.name }}</li>
+    {% endfor %}
+</ul>
