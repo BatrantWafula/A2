@@ -3,6 +3,17 @@ from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import BankForm, BranchForm
 from .models import Bank, Branch
+from django.shortcuts import render
+
+def banks_list(request):
+    context = {
+        'banks': [
+            {'name': 'Bank 1', 'branches': ['Branch 1A', 'Branch 1B']},
+            {'name': 'Bank 2', 'branches': ['Branch 2A', 'Branch 2B']}
+        ]
+    }
+    return render(request, 'banks/banks_list.html', context)
+
 
 @login_required
 def add_bank(request):

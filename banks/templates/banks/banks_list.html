@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banks List</title>
+</head>
+<body>
+    <h1>List of Banks</h1>
+    <ul>
+        {% for bank in banks %}
+            <li>
+                <strong>{{ bank.name }}</strong>
+                <ul>
+                    {% for branch in bank.branches %}
+                        <li>{{ branch }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
